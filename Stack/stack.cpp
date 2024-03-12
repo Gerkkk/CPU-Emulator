@@ -10,7 +10,7 @@ int main(){
     s.push("5");
     s.push("6");
     s.push("7sdfsdfs");
-
+    std::cout << s.top() << std::endl;
     Stack<std::string> s1((Stack<std::string>()));
 
     return 0;

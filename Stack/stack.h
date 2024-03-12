@@ -43,10 +43,11 @@ namespace stack{
             }
         }
 
-         Stack(const Stack &&s) noexcept{
+         Stack(Stack &&s) noexcept{
             reserve = s.reserve;
             len = s.len;
             data = std::move(s.data);
+            s.data = nullptr;
         }
 
         Stack& operator=(const Stack &other){
@@ -65,12 +66,12 @@ namespace stack{
             delete []data;
         };
 
-        int size() {
+        int getSize() {
             return this->len;
         }
 
         T &top() {
-            if (this->len == 0) {
+            if (isEmpty()) {
                 throw StackException("Trying to get the top element of empty stack");
             } else {
                 T &a = this->data[this->len - 1];
@@ -78,7 +79,7 @@ namespace stack{
             }
         }
 
-        bool empty() {
+        bool isEmpty() {
             if (this->len == 0) {
                 return true;
             } else {
@@ -86,7 +87,7 @@ namespace stack{
             }
         }
 
-        void push(T& elem) {
+        void push(const T& elem) {
             if (this->len < this->reserve) {
                 data[len] = elem;
                 ++len;
@@ -107,23 +108,24 @@ namespace stack{
         }
 
         void push(T&& elem) {
-            if (this->len < this->reserve) {
-                data[len] = std::move(elem);
-                ++len;
-            } else {
-                T *new_data = new T[this->reserve * 2];
-                for (int i = 0; i < this->len; i++) {
-                    new_data[i] = data[i];
-                }
-
-                T *temp = this->data;
-                this->data = new_data;
-                delete [] temp;
-
-                data[len] = std::move(elem);
-                ++len;
-                reserve = this->reserve * 2;
-            }
+            push(elem);
+//            if (this->len < this->reserve) {
+//                data[len] = std::move(elem);
+//                ++len;
+//            } else {
+//                T *new_data = new T[this->reserve * 2];
+//                for (int i = 0; i < this->len; i++) {
+//                    new_data[i] = data[i];
+//                }
+//
+//                T *temp = this->data;
+//                this->data = new_data;
+//                delete [] temp;
+//
+//                data[len] = std::move(elem);
+//                ++len;
+//                reserve = this->reserve * 2;
+//            }
         }
 
         void pop() {

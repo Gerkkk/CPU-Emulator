@@ -16,39 +16,39 @@ TEST(Int, int1) {
     s.pop();
 
     EXPECT_EQ(s.top(), 32);
-    EXPECT_EQ(s.empty(), false);
+    EXPECT_EQ(s.isEmpty(), false);
 
     s.pop();
     s.pop();
     s.pop();
-    EXPECT_EQ(s.empty(), true);
+    EXPECT_EQ(s.isEmpty(), true);
 }
 
 TEST(Int, int2) {
     Stack<int> s;
-    EXPECT_EQ(s.size(), 0);
-    EXPECT_EQ(s.empty(), true);
+    EXPECT_EQ(s.getSize(), 0);
+    EXPECT_EQ(s.isEmpty(), true);
 
     for(int i = 0; i < 100; i++) {
         s.push(i);
     }
 
-    EXPECT_EQ(s.size(), 100);
-    EXPECT_EQ(s.empty(), false);
+    EXPECT_EQ(s.getSize(), 100);
+    EXPECT_EQ(s.isEmpty(), false);
 
     for (int i = 99; i >= 0; i--) {
         EXPECT_EQ(s.top(), i);
         s.pop();
     }
 
-    EXPECT_EQ(s.size(), 0);
-    EXPECT_EQ(s.empty(), true);
+    EXPECT_EQ(s.getSize(), 0);
+    EXPECT_EQ(s.isEmpty(), true);
 }
 
 TEST(Double, double1) {
     Stack<double> s;
-    EXPECT_EQ(s.size(), 0);
-    EXPECT_EQ(s.empty(), true);
+    EXPECT_EQ(s.getSize(), 0);
+    EXPECT_EQ(s.isEmpty(), true);
 
     s.push(1.12413);
     s.push(-984394.435);
@@ -61,8 +61,8 @@ TEST(Double, double1) {
     s.push(-765.1);
 
     EXPECT_EQ(s.top(), -765.1);
-    EXPECT_EQ(s.empty(), false);
-    EXPECT_EQ(s.size(), 9);
+    EXPECT_EQ(s.isEmpty(), false);
+    EXPECT_EQ(s.getSize(), 9);
 
     s.pop();
     EXPECT_EQ(s.top(), 0.0);
@@ -74,8 +74,8 @@ TEST(Double, double1) {
 
 TEST(String, string1) {
     Stack<std::string> s;
-    EXPECT_EQ(s.size(), 0);
-    EXPECT_EQ(s.empty(), true);
+    EXPECT_EQ(s.getSize(), 0);
+    EXPECT_EQ(s.isEmpty(), true);
 
     std::string s1 = "jala123s41d4alsdl-";
     s.push(s1);
@@ -84,8 +84,8 @@ TEST(String, string1) {
     s.push(s2);
     s.push("0");
 
-    EXPECT_EQ(s.empty(), false);
-    EXPECT_EQ(s.size(), 4);
+    EXPECT_EQ(s.isEmpty(), false);
+    EXPECT_EQ(s.getSize(), 4);
 
     EXPECT_EQ(s.top(), "0");
     s.pop();
@@ -98,8 +98,8 @@ TEST(String, string1) {
 
 TEST(String, string2) {
     Stack<std::string> s;
-    EXPECT_EQ(s.size(), 0);
-    EXPECT_EQ(s.empty(), true);
+    EXPECT_EQ(s.getSize(), 0);
+    EXPECT_EQ(s.isEmpty(), true);
 
     for(int i = 0; i < 100; i++) {
 
@@ -107,16 +107,16 @@ TEST(String, string2) {
         s.push(temp);
     }
 
-    EXPECT_EQ(s.size(), 100);
-    EXPECT_EQ(s.empty(), false);
+    EXPECT_EQ(s.getSize(), 100);
+    EXPECT_EQ(s.isEmpty(), false);
 
     for (int i = 99; i >= 0; i--) {
         EXPECT_EQ(s.top(), std::to_string(i));
         s.pop();
     }
 
-    EXPECT_EQ(s.size(), 0);
-    EXPECT_EQ(s.empty(), true);
+    EXPECT_EQ(s.getSize(), 0);
+    EXPECT_EQ(s.isEmpty(), true);
 }
 
 TEST(String, string3) {

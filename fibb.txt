@@ -1,0 +1,203 @@
+beg
+    push 0
+    out
+    push 0
+    push 1
+    out
+    push 1
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+    add
+    popr AX
+    pushr AX
+    pushr AX
+    out
+end
