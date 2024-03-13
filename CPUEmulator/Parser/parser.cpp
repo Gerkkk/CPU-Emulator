@@ -8,8 +8,8 @@ Parser::Parser(std::string &filepath) {
     std::string buf;
 
     while (std::getline(file, buf, '\n')) {
-        Command res = read_string(buf);
 
+        Command res = read_string(buf);
         parsed_info.push_back(res);
         buf = "";
     }

@@ -1,6 +1,5 @@
 #include "../Stack/stack.h"
 #include "Parser/parser.h"
-#include "Parser/parser.cpp"
 
 using namespace stack;
 
@@ -101,7 +100,8 @@ public:
 };
 
 //int main(int argc, char *argv[]){
-//    for (int i = 0; i < argc; i++) {
+//
+//    for (int i = 1; i < argc; i++) {
 //        //"./fibb.txt"
 //        std::string path = argv[i];
 //        CPU cpu = CPU(path);
@@ -110,7 +110,7 @@ public:
 //}
 
 int main(){
-    std::string path = "./fibb.txt";
+    std::string path = "../fibb.txt";
     CPU cpu = CPU(path);
     cpu.execute_program();
 }

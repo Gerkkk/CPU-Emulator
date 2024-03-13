@@ -10,6 +10,7 @@ add_executable(CPU
         CPUEmulator/Parser/parser.cpp
         CPUEmulator/Command/Command.h
         CPUEmulator/Command/Command.cpp
-        CPUEmulator/exceptions/exceptions.h)
+        CPUEmulator/exceptions/exceptions.h
+        CPUEmulator/emul.cpp)
 
 target_link_libraries(CPU PUBLIC Stack)

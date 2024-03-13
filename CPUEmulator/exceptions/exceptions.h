@@ -1,7 +1,6 @@
 #ifndef CPUEMUL_EXCEPTIONS_H
 #define CPUEMUL_EXCEPTIONS_H
 #include <exception>
-#include <iostream>
 
 class ParserException: public std::exception{
     public:
