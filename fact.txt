@@ -1,0 +1,26 @@
+beg
+    in
+    popr AX
+    push 1
+    popr BX
+    push 1
+    popr CX
+    calc:
+        pushr CX
+        pushr BX
+        mul
+        popr CX
+        pushr BX
+        push 1
+        add
+        popr BX
+        pop
+        pop
+        pop
+        pop
+        pushr BX
+        pushr AX
+        jae calc
+    pushr CX
+    out
+end

@@ -1,0 +1,31 @@
+compute:
+    pushr AX
+    pushr AX
+    pushr AX
+    push 1
+    sub
+    popr AX
+    pop
+    pop
+    push 1
+    jeq return
+    call compute
+    pushr BX
+    mul
+    popr BX
+    pop
+    pop
+    jmp return
+
+return:
+	ret
+
+beg
+	in
+	popr AX
+	push 1
+	popr BX
+	call compute
+	pushr BX
+	out
+end

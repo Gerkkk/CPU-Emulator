@@ -1,5 +1,9 @@
 #include "parser.h"
 
+enum class CommandName {
+
+};
+
 Parser::Parser(std::string &filepath) {
     std::ifstream fin;
     file = std::move(fin);
@@ -28,7 +32,7 @@ Command Parser::read_string(std::string &input) {
 
     if (regex_match(input, std::regex(R"([\s]*beg)"))) {
         c_type = "beg";
-    } else if (regex_match(input, std::regex(R"([\s]*end)"))){
+    } else if (regex_match(input, std::regex(R"([\s]*end)"))) {
         c_type = "end";
     } else if (regex_match(input, std::regex(R"([\s]*pop)"))) {
         c_type = "pop";
@@ -107,6 +111,192 @@ Command Parser::read_string(std::string &input) {
             ++i;
         }
         arg = a;
+    } else if (regex_match(input, std::regex(R"([\s]*[\S]+:)"))) {
+        c_type = "label";
+
+        int i = 0;
+        std::string a;
+        while (input[i] == ' ') {
+            ++i;
+        }
+
+        while (input[i] != ':') {
+            a.push_back(input[i]);
+            ++i;
+        }
+        arg = a;
+    } else if (regex_match(input, std::regex(R"(\s*)"))) {
+        c_type = "end_label";
+    } else if (regex_match(input, std::regex(R"([\s]*jmp\s+[\S]+)"))) {
+        c_type = "jmp";
+
+        int i = 0;
+        std::string a;
+        while (input[i] == ' ') {
+            ++i;
+        }
+
+        while (input[i] != ' ') {
+            ++i;
+        }
+
+        while (input[i] == ' ') {
+            ++i;
+        }
+        while (i < input.size() && input[i] != ' ' && input[i] != '\n') {
+            a.push_back(input[i]);
+            ++i;
+        }
+        arg = a;
+    } else if (regex_match(input, std::regex(R"([\s]*jeq\s+[\S]+)"))) {
+        c_type = "jeq";
+
+        int i = 0;
+        std::string a;
+        while (input[i] == ' ') {
+            ++i;
+        }
+
+        while (input[i] != ' ') {
+            ++i;
+        }
+
+        while (input[i] == ' ') {
+            ++i;
+        }
+        while (i < input.size() && input[i] != ' ' && input[i] != '\n') {
+            a.push_back(input[i]);
+            ++i;
+        }
+        arg = a;
+    } else if (regex_match(input, std::regex(R"([\s]*jne\s+[\S]+)"))) {
+        c_type = "jne";
+
+        int i = 0;
+        std::string a;
+        while (input[i] == ' ') {
+            ++i;
+        }
+
+        while (input[i] != ' ') {
+            ++i;
+        }
+
+        while (input[i] == ' ') {
+            ++i;
+        }
+        while (i < input.size() && input[i] != ' ' && input[i] != '\n') {
+            a.push_back(input[i]);
+            ++i;
+        }
+        arg = a;
+    } else if (regex_match(input, std::regex(R"([\s]*ja\s+[\S]+)"))) {
+        c_type = "ja";
+
+        int i = 0;
+        std::string a;
+        while (input[i] == ' ') {
+            ++i;
+        }
+
+        while (input[i] != ' ') {
+            ++i;
+        }
+
+        while (input[i] == ' ') {
+            ++i;
+        }
+        while (i < input.size() && input[i] != ' ' && input[i] != '\n') {
+            a.push_back(input[i]);
+            ++i;
+        }
+        arg = a;
+    } else if (regex_match(input, std::regex(R"([\s]*jae\s+[\S]+)"))) {
+        c_type = "jae";
+
+        int i = 0;
+        std::string a;
+        while (input[i] == ' ') {
+            ++i;
+        }
+
+        while (input[i] != ' ') {
+            ++i;
+        }
+
+        while (input[i] == ' ') {
+            ++i;
+        }
+        while (i < input.size() && input[i] != ' ' && input[i] != '\n') {
+            a.push_back(input[i]);
+            ++i;
+        }
+        arg = a;
+    } else if (regex_match(input, std::regex(R"([\s]*jb\s+[\S]+)"))) {
+        c_type = "jb";
+
+        int i = 0;
+        std::string a;
+        while (input[i] == ' ') {
+            ++i;
+        }
+
+        while (input[i] != ' ') {
+            ++i;
+        }
+
+        while (input[i] == ' ') {
+            ++i;
+        }
+        while (i < input.size() && input[i] != ' ' && input[i] != '\n') {
+            a.push_back(input[i]);
+            ++i;
+        }
+        arg = a;
+    } else if (regex_match(input, std::regex(R"([\s]*jbe\s+[\S]+)"))) {
+        c_type = "jbe";
+
+        int i = 0;
+        std::string a;
+        while (input[i] == ' ') {
+            ++i;
+        }
+
+        while (input[i] != ' ') {
+            ++i;
+        }
+
+        while (input[i] == ' ') {
+            ++i;
+        }
+        while (i < input.size() && input[i] != ' ' && input[i] != '\n') {
+            a.push_back(input[i]);
+            ++i;
+        }
+        arg = a;
+    } else if (regex_match(input, std::regex(R"([\s]*call\s+[\S]+)"))) {
+        c_type = "call";
+
+        int i = 0;
+        std::string a;
+        while (input[i] == ' ') {
+            ++i;
+        }
+
+        while (input[i] != ' ') {
+            ++i;
+        }
+
+        while (input[i] == ' ') {
+            ++i;
+        }
+        while (i < input.size() && input[i] != ' ' && input[i] != '\n') {
+            a.push_back(input[i]);
+            ++i;
+        }
+        arg = a;
+    } else if (regex_match(input, std::regex(R"([\s]*ret\s*)"))) {
+        c_type = "ret";
     } else {
         throw ParserException(input + " - Syntax Error, wrong command");
     }
