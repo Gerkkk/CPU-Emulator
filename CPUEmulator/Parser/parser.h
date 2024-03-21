@@ -13,7 +13,8 @@ public:
     std::vector<Command> parsed_info;
 
     explicit Parser(std::string  &filepath);
-    ~Parser();
     static Command read_string(std::string &);
+    static std::string get_arg(std::string &);
+    static std::string get_label(std::string &);
 };
 #endif //CPUEMUL_PARSER_H
