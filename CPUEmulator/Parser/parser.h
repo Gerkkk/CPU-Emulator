@@ -3,9 +3,8 @@
 
 #include <fstream>
 #include <vector>
-#include <regex>
 #include "../Command/Command.h"
-#include "../exceptions/exceptions.h"
+
 
 class Parser {
 public:
