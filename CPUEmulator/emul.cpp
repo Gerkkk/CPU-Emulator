@@ -44,8 +44,20 @@ public:
 //    }
 //}
 
-int main() {
-    std::string path = "../recursion.txt";//Enter the path to program there
-    CPU cpu = CPU(path);
-    cpu.execute_program();
+int main(int argc, char *argv[]) {
+
+    if (argc == 1) {
+        std::cout << "Please enter path to your program" << std::endl;
+    } else {
+        std::string path = "";
+
+        int i = 0;
+        while (argv[1][i] != '\0') {
+            path.push_back(argv[1][i]);
+            i++;
+        }
+
+        CPU cpu = CPU(path);
+        cpu.execute_program();
+    }
 }
