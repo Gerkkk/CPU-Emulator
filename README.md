@@ -2,7 +2,7 @@
 
 This is a simple CPU emulator with a tiny assembly-like language for it.
 
-A CPU has 8 32 bit registers (AX, BX, CX, DX, EX, FX, GX, HX) and a stack.
+A CPU has 8 32 bit registers (AX, BX, CX, DX, EX, FX, GX, HX) and a stack(that is written from scratch).
 
 ## Available commands
 
